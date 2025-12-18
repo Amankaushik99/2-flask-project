@@ -1,0 +1,111 @@
+<html>
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+         body {
+               margin: 20px;
+               font-family: Arial, sans-serif;
+               background-color: wheat;
+               border-radius: 5px;
+               padding: 20px;
+               box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         }
+         h1 {
+               color: #333;
+               margin-bottom: 20px;
+               font-size: 24px;
+               font-weight: bold;
+               text-align: center;
+
+         }
+         p {
+               color: #555;
+               line-height: 1.6;
+               margin-bottom: 20px;
+               font-size: 16px;
+         }
+         .btn-primary {
+               background-color: #007bff;
+               border: none;
+               padding: 10px 20px;
+               font-size: 16px;
+               border-radius: 5px;
+               cursor: pointer;
+         }
+         .btn-primary:hover {
+               background-color: #0056b3;
+         }
+    </style>
+</head>
+<body>
+  {% include 'nav.html' %}
+   <header class="p-3 text-bg-dark">
+        <div class="container">
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          >
+            <a
+              href="/"
+              class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+            >
+              <svg
+                class="bi me-2"
+                width="40"
+                height="32"
+                role="img"
+                aria-label="Bootstrap"
+              >
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+            </a>
+            <ul
+              class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+            >
+              <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+            </ul>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <input
+                type="search"
+                class="form-control form-control-dark text-bg-dark"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+            </form>
+            <div class="text-end">
+              <button type="button" class="btn btn-outline-light me-2">
+                Login
+              </button>
+              <button type="button" class="btn btn-warning">Sign-up</button>
+            </div>
+          </div>
+        </div>
+      </header>
+    <h1>Welcome to the Home Page</h1>
+    <p>This is the main landing page of the application.</p>
+    <div style="border-radius: 20px; overflow: hidden; margin-bottom: 20px; text-align: center;">
+    <P style="font-size: medium; font: Arial, sans-serif;">
+      I am an aspiring IT professional with a strong interest in software development and data-driven technologies. Currently pursuing my studies, I am building practical skills in programming, web development using Flask, and problem-solving through hands-on projects. I am motivated to start my career in a challenging role where I can apply my technical knowledge, continuously learn new technologies, and contribute to innovative solutions that create real-world impact.
+
+    </P>
+    <img src="{{ url_for('static', filename='grpimg.jpg') }}" alt="group photo" width="500" height="300">
+    </div>
+    <H2> JOBS LISTS</H2>
+   
+
+    <div>
+         {% for job in jobs %}
+            {% include 'job.html' %}
+         {% endfor %}
+      </div>
+      <div class="text-center">
+         <a href="https://www.google.com/?client=safari&zx=1766081750799&no_sw_cr=1" class="btn btn-primary btn-lg form-control-dark">CONTACT</a>
+      </div>   
+
+      {% include 'footer.html' %}
+</body>
+</html>
