@@ -2,6 +2,8 @@ from flask import Flask, jsonify, request, abort, render_template, redirect, url
 import os
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
+# test commit
+
 
 JOBS = [
     {
